@@ -78,6 +78,7 @@ class BarcodeView(context: Context, messenger: BinaryMessenger, id: Int, args: M
             val barcodeEncoder = BarcodeEncoder()
             val bitmap = barcodeEncoder.createBitmap(bitMatrix)
             imageView.setImageBitmap(bitmap)
+            imageView.scaleType = ImageView.ScaleType.FIT_XY
         }catch (e : IllegalArgumentException){
             print(e.stackTrace)
         }
